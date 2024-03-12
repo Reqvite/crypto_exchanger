@@ -19,7 +19,7 @@ type ReturnType = {
 export const useCryptoExchanger = (): ReturnType => {
   const [price, setPrice] = useState<number>(0);
   const [cryptoName, setCryptoName] = useState("");
-  const [isBuying, setIsBuying] = useState(true);
+  const [isBuying, setIsBuying] = useState(false);
   const [amount, setAmount] = useState<string | number>("");
   const [isLoading, setIsLoading] = useState(false);
   const toast = useToast();

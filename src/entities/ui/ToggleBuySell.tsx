@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const ToggleBuySell = (props: Props) => {
-  const { isBuying = true, onChange } = props;
+  const { isBuying, onChange } = props;
 
   const handleToggle = () => {
     onChange(!isBuying);
