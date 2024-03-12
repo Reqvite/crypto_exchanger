@@ -32,6 +32,7 @@ export const CryptoExchanger = () => {
             type="number"
             autoFocus
             isRequired
+            step="0.00000001"
             variant={"primary"}
             min={MIN_INPUT_VALUE}
             max={MAX_INPUT_VALUE}

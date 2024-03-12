@@ -1,11 +1,22 @@
 import { useToast } from "@chakra-ui/react";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, FormEventHandler, useEffect, useState } from "react";
 
 import { MAX_INPUT_VALUE, MIN_INPUT_VALUE } from "../const";
 
 const BinanceWebSocketUrl = "wss://stream.binance.com:9443/ws/ethusdt@ticker";
 
-export const useCryptoExchanger = () => {
+type ReturnType = {
+  price: number;
+  cryptoName: string;
+  isBuying: boolean;
+  amount: string | number;
+  isLoading: boolean;
+  handleToggleChange: (value: boolean) => void;
+  handleAmountChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: FormEventHandler<HTMLDivElement>;
+};
+
+export const useCryptoExchanger = (): ReturnType => {
   const [price, setPrice] = useState<number>(0);
   const [cryptoName, setCryptoName] = useState("");
   const [isBuying, setIsBuying] = useState(true);
@@ -56,6 +67,7 @@ export const useCryptoExchanger = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
+      setAmount("");
       toast({
         position: "top",
         title: "Operation processed successfully!",
