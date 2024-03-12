@@ -49,17 +49,19 @@ export const useCryptoExchanger = (): ReturnType => {
 
   const handleAmountChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(event.target.value);
-    if (typeof value === "number") {
-      if (value <= MIN_INPUT_VALUE || isNaN(value)) {
-        setAmount("");
-        return;
-      }
-      if (value >= MAX_INPUT_VALUE) {
-        setAmount(MAX_INPUT_VALUE);
-        return;
-      }
-      setAmount(value);
+    if (isNaN(value)) {
+      setAmount("");
+      return;
     }
+    if (value <= MIN_INPUT_VALUE) {
+      setAmount(0);
+      return;
+    }
+    if (value >= MAX_INPUT_VALUE) {
+      setAmount(MAX_INPUT_VALUE);
+      return;
+    }
+    setAmount(value);
   };
 
   const handleSubmit = (e: FormEvent<HTMLDivElement>) => {
