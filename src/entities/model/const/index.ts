@@ -1,0 +1,4 @@
+const MAX_INPUT_VALUE = 100;
+const MIN_INPUT_VALUE = 0;
+
+export { MAX_INPUT_VALUE, MIN_INPUT_VALUE };

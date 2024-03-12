@@ -18,7 +18,7 @@ export const Input = memo((props: InputProps) => {
 
   return (
     <FormControl variant="floating" id={props.name}>
-      <ChakraInput fontSize={20} placeholder=" " variant={"primary"} {...otherProps} />
+      <ChakraInput fontSize={24} placeholder=" " {...otherProps} />
       <FormLabel>{label}</FormLabel>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
       {error && <FormErrorMessage>{error}</FormErrorMessage>}
