@@ -14,7 +14,7 @@ type ReturnType = {
   handleToggleChange: (value: boolean) => void;
   handleAmountChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: FormEventHandler<HTMLDivElement>;
-  totalValue: number;
+  totalValue: number | string;
 };
 
 export const useCryptoExchanger = (): ReturnType => {
