@@ -13,7 +13,7 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { FiBell, FiChevronDown, FiMenu } from "react-icons/fi";
+import { FiChevronDown, FiMenu } from "react-icons/fi";
 
 interface MobileProps extends FlexProps {
   onOpen: () => void;
@@ -53,14 +53,6 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       </Text>
 
       <HStack spacing={{ base: "0", md: "6" }}>
-        <IconButton
-          size="lg"
-          _hover={{
-            bg: "accentColor",
-          }}
-          aria-label="open menu"
-          icon={<FiBell />}
-        />
         <Flex alignItems={"center"}>
           <Menu>
             <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: "none" }}>
