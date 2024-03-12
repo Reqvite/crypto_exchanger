@@ -17,9 +17,9 @@ export const CryptoExchanger = () => {
     handleToggleChange,
     handleAmountChange,
     handleSubmit,
+    totalValue,
   } = useCryptoExchanger();
 
-  const totalValue = typeof amount === "number" ? (amount * price).toFixed(2) : 0;
   return (
     <Flex as="main" justifyContent="center" alignItems="center" height="calc(100vh - 120px)">
       {price ? (

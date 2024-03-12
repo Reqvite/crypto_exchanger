@@ -14,6 +14,7 @@ type ReturnType = {
   handleToggleChange: (value: boolean) => void;
   handleAmountChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: FormEventHandler<HTMLDivElement>;
+  totalValue: number;
 };
 
 export const useCryptoExchanger = (): ReturnType => {
@@ -80,6 +81,8 @@ export const useCryptoExchanger = (): ReturnType => {
     }, 2000);
   };
 
+  const totalValue = typeof amount === "number" ? (amount * price).toFixed(2) : 0;
+
   return {
     price,
     cryptoName,
@@ -89,5 +92,6 @@ export const useCryptoExchanger = (): ReturnType => {
     handleToggleChange,
     handleAmountChange,
     handleSubmit,
+    totalValue,
   };
 };
