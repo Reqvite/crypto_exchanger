@@ -23,6 +23,9 @@ export const ResultCard = (props: Props) => {
       <StatNumber fontSize={"2xl"} fontWeight={"medium"} textAlign="center">
         {price}
       </StatNumber>
+      <StatLabel fontWeight={"small"} isTruncated textAlign="center">
+        usdt
+      </StatLabel>
     </Stat>
   );
 };
